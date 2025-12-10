@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "NH AI Plugin",
+  "version": "0.2.0",
+  "description": "AI-powered chat assistant with multi-model support and smart autofill",
+  "author": "염동환",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_icon": {
+      "19": "icons/icon19.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "icons": {
+    "19": "icons/icon19.png",
+    "48": "icons/icon48.png"
+  },
+  "commands": {
+    "toggle-sidepanel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Toggle side panel"
+    }
+  }
+} 

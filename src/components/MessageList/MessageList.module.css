@@ -1,0 +1,256 @@
+.messagesContainer {
+  flex: 1 1 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  min-width: 0;
+  font-size: 14px;
+  background: #0b0f14;
+}
+
+.messagesContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: #0f1520;
+  border-radius: 4px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: rgba(88, 166, 255, 0.35);
+  border-radius: 4px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(88, 166, 255, 0.6);
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  animation: fadeIn 0.3s ease;
+  min-width: 0;
+}
+
+.userMessage {
+  flex-direction: row-reverse;
+  margin-left: 50px;
+}
+
+.assistantMessage {
+  flex-direction: row;
+  margin-right: 50px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  max-width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.userAvatar {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+.assistantAvatar {
+  background: #0f1520;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userAvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.messageContent {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.messageBubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  animation: slideIn 0.2s ease;
+  min-width: 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.messageBubble p {
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.messageBubble * {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.userBubbleOuter {
+  display: flex;
+  align-items: flex-end;
+}
+
+.assistantBubbleOuter {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.userBubble {
+  background: #111a2b;
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  color: rgba(235, 239, 244, 0.92);
+  border-bottom-right-radius: 6px;
+}
+
+.assistantBubble {
+  background: #0e1420;
+  color: rgba(235, 239, 244, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-bottom-left-radius: 6px;
+}
+
+.assistantBubble :global(code) {
+  background: #0b111c;
+  color: rgba(235, 239, 244, 0.95);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.assistantBubble :global(pre) {
+  background: #0b111c;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.assistantBubble :global(pre code) {
+  background: none;
+  padding: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  display: block;
+}
+
+.assistantBubble :global(a) {
+  color: #58a6ff;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.assistantBubble :global(strong) {
+  color: rgba(235, 239, 244, 1);
+  font-weight: 600;
+}
+
+.assistantBubble :global(ul),
+.assistantBubble :global(ol) {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.assistantBubble :global(li) {
+  margin: 4px 0;
+}
+
+.typingBubble {
+  min-width: 60px;
+  padding: 16px;
+}
+
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typingIndicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.65);
+  animation: typing 1.4s infinite;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingIndicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: rgba(148, 163, 184, 0.75);
+  padding: 0 4px;
+}
+
+.userTimestamp {
+  text-align: right;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
