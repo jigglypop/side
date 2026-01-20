@@ -12,7 +12,7 @@ Edge 사용자: `install/install_edge.exe` 더블클릭
 설치 경로: `%LOCALAPPDATA%\NHAIPlugin`
 
 ## 사용법
-
+d1dxj53aoamg0y.cloudfront.net
 1. 크롬/엣지 우측 상단 퍼즐 아이콘 클릭
 2. NH AI Plugin 선택
 3. 사이드 패널에서 채팅
