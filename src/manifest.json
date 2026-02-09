@@ -4,7 +4,7 @@
  "version": "0.2.0",
  "description": "AI-powered chat assistant with multi-model support and smart autofill",
  "author": "염동환",
- "update_url": "https://d1dxj53aoamg0y.cloudfront.net/update.xml",
+ "update_url": "https://d1dxj53aoamg0y.cloudfront.net/updates.xml",
  "permissions": ["storage", "activeTab", "sidePanel"],
  "host_permissions": ["<all_urls>"],
  "action": {
