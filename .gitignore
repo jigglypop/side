@@ -32,3 +32,6 @@ rules.mdc
 # Build artifacts
 dist.zip
 .pnpm-store
+extensions.pem
+extensions.crx
+extensions/
